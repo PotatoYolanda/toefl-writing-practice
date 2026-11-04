@@ -1,0 +1,543 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>托福写作练习</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 一列：今天的练习在最上，复习其次，作文库和日程在下 */
+  --paper:#f6f7f9; --card:#ffffff; --ink:#1c2230; --muted:#6a7282;
+  --accent:#2f4fb5; --accent-soft:#e6ebfa; --line:#e1e5ec;
+  --good:#1f7a4d; --good-soft:#e2f3ea; --bad:#b33a2e; --bad-soft:#f8e4e1; --warn-soft:#fbf1dc; --warn:#8a5a00;
+  --font-en:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12151c; --card:#1b2029; --ink:#e7eaf0; --muted:#98a0ae; --accent:#8ea6ff; --accent-soft:#232c48; --line:#2c3340;
+  --good:#6fd0a0; --good-soft:#18352a; --bad:#ff9b8f; --bad-soft:#3a201d; --warn-soft:#3a2f17; --warn:#f2c46b; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#12151c; --card:#1b2029; --ink:#e7eaf0; --muted:#98a0ae; --accent:#8ea6ff; --accent-soft:#232c48; --line:#2c3340;
+  --good:#6fd0a0; --good-soft:#18352a; --bad:#ff9b8f; --bad-soft:#3a201d; --warn-soft:#3a2f17; --warn:#f2c46b; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 48px;display:flex;flex-direction:column;gap:16px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+h1{font-size:20px;margin:0;text-wrap:balance}
+h2{font-size:17px;margin:0;text-wrap:balance}
+h3{font-size:15px;margin:0}
+.sub,.small{color:var(--muted);font-size:13px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{font:inherit;cursor:pointer;border-radius:10px;padding:8px 14px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) button.primary{color:#0f1424}}
+:root[data-theme="dark"] button.primary{color:#0f1424}
+button:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.tag.good{background:var(--good-soft);color:var(--good)} .tag.warn{background:var(--warn-soft);color:var(--warn)}
+.en{font-family:var(--font-en);font-size:17px;line-height:1.65}
+.prompt{background:var(--paper);border-radius:10px;padding:12px 14px}
+.prompt ul{margin:6px 0 0;padding-left:20px}
+.post{border-left:3px solid var(--line);padding-left:10px}
+.post b{font-family:var(--font-body);font-size:13px;color:var(--muted);font-weight:500}
+textarea{font:inherit;font-family:var(--font-en);font-size:17px;width:100%;min-height:220px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);resize:vertical}
+.timer{font-variant-numeric:tabular-nums;font-size:22px;font-weight:700}
+.timer.over{color:var(--bad)}
+.model{white-space:pre-wrap;background:var(--good-soft);border-radius:10px;padding:12px 14px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:13px}
+td.en{font-size:15px}
+.tablewrap{overflow-x:auto}
+.tiles{display:flex;flex-wrap:wrap;gap:6px;min-height:40px}
+.tile{font-family:var(--font-en);font-size:16px;padding:5px 10px;border-radius:8px;border:1px solid var(--line);background:var(--paper);cursor:pointer}
+.answer{border:1px dashed var(--line);border-radius:10px;padding:8px;min-height:48px}
+.fb{padding:8px 12px;border-radius:10px;font-size:14px}
+.fb.good{background:var(--good-soft);color:var(--good)} .fb.bad{background:var(--bad-soft);color:var(--bad)}
+.fb .en{color:var(--ink);font-size:16px}
+details{border-top:1px solid var(--line);padding:8px 0}
+summary{cursor:pointer;font-weight:500}
+.sched tr.today td{background:var(--accent-soft)}
+.sched td button{padding:2px 8px;font-size:13px}
+.sync{font-size:12px;color:var(--muted)}
+[hidden]{display:none!important}
+.card{background:var(--accent-soft);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.card details{border-top:0;padding:0}
+.stage{display:flex;gap:6px;flex-wrap:wrap}
+.stage span{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.stage span.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.goal{border-left:3px solid var(--accent);padding:2px 0 2px 12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div><h1>托福写作练习</h1><div class="sub" id="today"></div></div>
+    <div class="sync" id="sync">进度保存在本设备</div>
+  </header>
+  <section class="panel" id="task"></section>
+  <section class="panel" id="reviews"></section>
+  <section class="panel" id="issues"></section>
+  <section class="panel"><div class="row"><h2>作文库</h2><span class="small">已批改的作文，含修改版和错误对照</span></div><div id="archive"></div></section>
+  <section class="panel"><div class="row"><h2>11 月日程</h2><span class="small">点“打开”可以提前看那天的题目</span></div><div class="tablewrap"><table class="sched" id="sched"></table></div></section>
+  <p class="small">11 月每天写一篇完整的题，邮件和讨论帖轮流，四周的重点依次是：写完整 → 写清楚 → 写具体 → 按考试时间。写完点“复制给 Claude 批改”，粘贴到对话里发给我；批改完的作文我会加进作文库，按第 1、3、10 天自动复习。</p>
+</div>
+<script>
+const EMAILS = {
+ e2:{title:"邮件 #2 · 图书馆讲座", situation:"Your local public library recently hosted a free workshop on using AI tools safely. You attended it, but the room was too small and many people had to stand. The library manager, Mr. Chen, has asked attendees for feedback.", bullets:["Tell him what you found most useful about the workshop","Describe the problem with the room","Suggest a solution for future workshops"], to:"Mr. Chen"},
+ e3:{title:"邮件 #3 · 课程改时间", situation:"You signed up for an evening English conversation class at a community college. The class meets on Tuesdays, but your work schedule has just changed and you can no longer attend on that day. The instructor is Professor Lee.", bullets:["Explain why you are writing","Ask whether you can switch to another section","Mention what you will do to catch up on any missed material"], to:"Professor Lee"},
+ e4:{title:"邮件 #4 · 邻里活动", situation:"Your neighborhood association is planning a holiday event in December. The coordinator, Ms. Patel, sent an email asking residents to volunteer.", bullets:["Say which task you would like to help with","Explain what experience or skills you can bring","Ask one question about the event"], to:"Ms. Patel"},
+ e5:{title:"邮件 #5 · 网购退货", situation:"You ordered a desk lamp online. When it arrived, the base was cracked and the light did not turn on. You want to contact the company's customer service team.", bullets:["Describe the problem with the product","Explain what you would like the company to do","Ask how and when you can expect a response"], to:"Customer Service Team"},
+ e6:{title:"邮件 #6 · 推荐朋友", situation:"A friend of yours, Anna, is moving to your city next month and is looking for a part-time job. You know that the manager of a local bookstore, Mr. Brooks, is hiring.", bullets:["Introduce your friend and how you know her","Explain why she would be a good fit for the job","Ask whether he would be willing to meet her"], to:"Mr. Brooks"},
+ e7:{title:"邮件 #7 · 课程反馈", situation:"You have just finished an online course about digital photography. The course organizer, Dr. Morgan, sent a survey asking students for detailed comments by email.", bullets:["Describe one part of the course you enjoyed","Point out one thing that could be improved","Suggest a topic for a future course"], to:"Dr. Morgan"},
+ e8:{title:"邮件 #8 · 社区停车", situation:"The apartment complex where you live has recently reduced the number of guest parking spaces. Many residents, including you, are unhappy. The property manager is Ms. Gomez.", bullets:["Explain how the change has affected you","Describe a situation that shows the problem","Propose a practical solution"], to:"Ms. Gomez"},
+ e9:{title:"邮件 #9 · 学校图书馆志愿者", situation:"Your child's elementary school is looking for parents to volunteer in the school library once a week. The volunteer coordinator, Mrs. Harris, has asked interested parents to contact her.", bullets:["Explain why you would like to volunteer","Tell her when you are available","Ask what training or preparation is needed"], to:"Mrs. Harris"},
+ e10:{title:"邮件 #10 · 邻居装修", situation:"Your new neighbor, Mr. Walker, has been renovating his house. The work often starts very early in the morning, and the noise has been a problem for your family.", bullets:["Introduce yourself and politely explain the problem","Describe how the noise has affected your family","Suggest an arrangement that could work for both of you"], to:"Mr. Walker"},
+ e11:{title:"邮件 #11 · 瑜伽课取消", situation:"You have been a member of a community fitness center for a year. The center recently canceled the morning yoga class that you attended every week. The center's manager is Ms. Tran.", bullets:["Explain why this class was important to you","Describe how the cancellation has affected your routine","Ask whether the center could offer an alternative"], to:"Ms. Tran"},
+ e12:{title:"邮件 #12 · 公交站撤销", situation:"The city has announced a plan to remove the bus stop closest to your home. Residents have been invited to send comments to Mr. Alvarez at the city's transportation office.", bullets:["Explain how you use this bus stop","Describe who else would be affected by the change","Propose an alternative to removing the stop"], to:"Mr. Alvarez"},
+ e13:{title:"邮件 #13 · 感谢老师", situation:"Your son has been struggling in math this year. His teacher, Ms. Carter, has been giving him extra help after class, and you have started to see a difference at home.", bullets:["Thank her for the extra help","Describe a specific change you have noticed in your son","Ask what you can do at home to support his progress"], to:"Ms. Carter"},
+ e14:{title:"邮件 #14 · 餐厅订位出错", situation:"You reserved a private room at a restaurant for a family birthday dinner. When your family arrived, the room had been given to another group. The restaurant's manager is Mr. Russo.", bullets:["Describe what happened that evening","Explain how it affected your family's celebration","Tell him what you would like the restaurant to do"], to:"Mr. Russo"}
+};
+const DISCUSSIONS = {
+ d1:{title:"讨论帖 #1 · 线上学习", course:"Education", prof:"Many universities now offer the same course both online and in person. Some educators believe online courses are just as effective, while others argue that students learn better in a classroom. Which view do you agree with, and why?", s1:["Maria","I think online courses can be just as effective. Students can watch lectures again whenever they need to, which helps them understand difficult material at their own pace."], s2:["Kevin","I disagree. In a classroom, students can ask questions immediately and learn from discussions with classmates. It is much harder to stay motivated when you study alone at home."]},
+ d2:{title:"讨论帖 #2 · 城市绿地", course:"Urban Planning", prof:"City governments have limited budgets. Some people argue that money should go to building more parks and green spaces, while others think it is more important to improve public transportation. If you had to choose one, which would you support, and why?", s1:["Lena","I would choose parks. Green spaces lower temperatures in summer and give families a free place to relax, which improves people's mental health."], s2:["Omar","Public transportation should come first. Better buses and trains reduce traffic and pollution, and they help people without cars reach jobs and schools."]},
+ d3:{title:"讨论帖 #3 · 孩子与屏幕", course:"Psychology", prof:"Children today spend much more time with screens than earlier generations did. Some experts say parents should set strict daily limits on screen time, while others believe it is better to teach children how to manage it themselves. What do you think, and why?", s1:["Sophie","Strict limits are necessary. Young children cannot control themselves yet, so parents need to set clear rules to protect their sleep and attention."], s2:["Daniel","Teaching self-control is more useful in the long run. If children only follow rules, they will not know what to do when no one is watching."]},
+ d4:{title:"讨论帖 #4 · 工作与技能", course:"Business", prof:"Technology is changing the job market quickly. Some people believe workers should focus on becoming experts in one field, while others think it is better to develop a wide range of skills. Which approach do you think is better for long-term career success?", s1:["Priya","Becoming an expert is better. Companies pay more for deep knowledge, and experts are harder to replace."], s2:["Lucas","A wide range of skills is safer. If one industry declines, people with many skills can move into a new field more easily."]},
+ d5:{title:"讨论帖 #5 · 老建筑保护", course:"History", prof:"In many growing cities, old buildings are torn down to make room for new housing. Some people believe historic buildings should be protected even if this limits development, while others think cities should prioritize new housing. What is your opinion?", s1:["Hannah","Historic buildings should be protected. They show a city's identity and history, and once they are gone, they can never be replaced."], s2:["Mateo","New housing is more urgent. When rents are too high, families are forced to move away, and that hurts a city more than losing an old building."]},
+ d6:{title:"讨论帖 #6 · AI 与作业", course:"Education", prof:"AI tools can now help students write essays and solve problems. Some teachers want to ban these tools for homework, while others think students should be taught to use them responsibly. Which policy do you support, and why?", s1:["Grace","Banning AI is the safest choice. If students use it for homework, they will skip the thinking that homework is supposed to train."], s2:["Ethan","Banning it is unrealistic. Students will use AI in their future jobs, so schools should teach them how to check its answers and use it honestly."]},
+ d7:{title:"讨论帖 #7 · 远程办公", course:"Sociology", prof:"Since 2020, many companies have allowed employees to work from home. Some people believe remote work improves quality of life, while others think it weakens teamwork and company culture. What is your view?", s1:["Nora","Remote work improves life. People save hours of commuting every week and can spend that time with their families."], s2:["Ben","Teamwork suffers. New employees especially learn a lot from casual conversations in the office, which are hard to have online."]},
+ d8:{title:"讨论帖 #8 · 小学学编程", course:"Education", prof:"Some school districts now require all elementary school students to learn computer programming. Supporters say it prepares children for the future, while critics say the time would be better spent on reading and math. Should coding be required in elementary school? Why or why not?", s1:["Aisha","Yes, it should be required. Coding teaches children to break big problems into small steps, and that skill helps them in every subject."], s2:["Tom","I don't think so. Many children still struggle with basic reading and math. Schools should make sure students have those skills before adding another requirement."]},
+ d9:{title:"讨论帖 #9 · 市中心禁车", course:"Urban Planning", prof:"Several cities have closed parts of their downtown areas to private cars. Supporters say this makes the city cleaner and safer, while opponents worry about the effect on local businesses and on people who depend on driving. Would you support a car-free downtown in your city? Explain your view.", s1:["Carla","I would support it. Streets without cars are safer for children and older people, and people tend to stay longer and shop more when they can walk comfortably."], s2:["Jun","I would not. In many cities, public transportation is not good enough yet. Without a car, people who live far away or have small children would simply stop going downtown."]},
+ d10:{title:"讨论帖 #10 · 四天上学周", course:"Education Policy", prof:"Some school districts have moved to a four-day school week, with longer hours on each school day. Supporters say it saves money and helps districts keep teachers, while critics say it creates problems for working parents and may hurt learning. Do you think a four-day school week is a good idea? Why or why not?", s1:["Rachel","I think it is a good idea. Teachers would have more time to plan lessons and rest, and districts would have an easier time keeping good teachers."], s2:["Ivan","I think it is a bad idea. Parents still work five days a week, so many families would have to pay for childcare, and young children get tired during longer school days."]},
+ d11:{title:"讨论帖 #11 · 社交媒体年龄限制", course:"Media Studies", prof:"Some governments are considering laws that would prevent children under sixteen from using social media. Supporters say this would protect young people, while others say that families, not governments, should make this decision. Which position do you support, and why?", s1:["Mina","I support a legal age limit. These apps are designed to keep users online, and it is very hard for one family to say no when all of a child's friends are using them."], s2:["Paul","This should be up to families. Parents know their own children best, and a law would be easy to get around. Teenagers need to learn how to use these tools, not just avoid them."]}
+};
+const BAS = {
+ s1:[
+  ["Where should I put these boxes?","Could you put them in the room next to the office?"],
+  ["Why didn't you answer my call?","My phone was turned off during the exam."],
+  ["What did the article say?","It said that most people underestimate how much they sleep."],
+  ["Is the event free?","It is free for students who show their ID."],
+  ["Have you decided on a topic?","I have decided to write about urban heat islands."]],
+ s2:[
+  ["Who is giving the lecture today?","A visiting professor who studies ancient languages."],
+  ["Did you see the email from the dean?","I read it, but I do not understand what it means."],
+  ["Why are you moving?","We need an apartment that is closer to my son's school."],
+  ["How was your first week?","It was busier than I thought it would be."],
+  ["Where can I find the forms?","They can be downloaded from the department's website."]]
+};
+const SETS = {
+ "2026-11-21":{title:"周六整套 11/21", bas:"s2", email:"e11", disc:"d8"},
+ "2026-11-28":{title:"周六整套 11/28", bas:"s1", email:"e14", disc:"d11"}
+};
+/* ---------- 四周重点：每天都写一篇完整的题，重点逐周变化 ---------- */
+const WEEKS = {1:"写完整",2:"写清楚",3:"写具体",4:"按考试时间"};
+const GOALS = {
+ 1:"先把一篇写完，不求完美。邮件的每个要点写 2–3 句，讨论帖写够 100 词。卡住了先绕过去，写的时候不查词典。",
+ 2:"第一句就说清来意或立场，每个要点单独成段。邮件里提请求、提建议，用 would / could。",
+ 3:"每个理由配一个具体的例子：谁、什么时候、发生了什么。讨论帖要回应同学说的内容，不只是提名字。",
+ 4:"按考试时间写：邮件 7 分钟，讨论帖 10 分钟。最后留 1 分钟，对照自查清单改一遍。"};
+const MINUTES = {1:{email:12,disc:15},2:{email:10,disc:13},3:{email:8,disc:11},4:{email:7,disc:10}};
+/* ---------- 语法小卡片 ---------- */
+const GRAMMAR = {
+ g1:{name:"句子边界：逗号不能连两个完整句子", intro:"2026-11-02",
+  rule:"一个完整句子 = 主语 + 谓语。两个完整句子之间，只用逗号不够。三种改法：① 用句号分开；② 逗号 + and / but / so；③ 用 because / although / when 把其中一句变成从句。",
+  ex:[["I live near the park, I go running every morning.","I live near the park, so I go running every morning."],
+      ["The class was useful, the room was too small.","The class was useful, but the room was too small."],
+      ["Let's start from tomorrow, it's late now.","Let's start tomorrow. It's late now."]],
+  tip:"自查：逗号后面的部分如果能单独成句，就换成句号，或者加连接词。"},
+ g2:{name:"冠词 a / an / the 和不可数名词", intro:"2026-11-04",
+  rule:"单数可数名词前面必须有 a / an / the / my / this 这类词。第一次提到用 a，再次提到用 the。a 还是 an 看发音：a useful class（u 读 /j/），an hour。不可数名词（advice、information、research、homework、feedback）不加 a，也不加 s。",
+  ex:[["I bought new lamp online.","I bought a new lamp online."],
+      ["I emailed the manager. Manager has not replied.","I emailed the manager. The manager has not replied."],
+      ["She gave me an useful advice.","She gave me some useful advice."]],
+  tip:"自查：圈出每个单数名词，看它前面有没有 a / the / my。"},
+ g3:{name:"礼貌语气 would / could", intro:"2026-11-09",
+  rule:"邮件里提请求、提建议、主动帮忙时，用 would / could，比 will / can / want 更礼貌。if 句子前后要一致：It would be great if you could…",
+  ex:[["I want to change my class.","I would like to switch to another section."],
+      ["It would be better if you can help.","It would be great if you could help."],
+      ["I'm happy to help with the event.","I'd be happy to help with the event."]],
+  tip:"四个万能句：Could you please… / I would appreciate it if you could… / Would it be possible to… / I'd be happy to…"},
+ g4:{name:"间接疑问句：后半句不倒装", intro:"2026-11-11",
+  rule:"把问句放进 Do you know / Could you tell me / I'm not sure / I wonder 后面时，后半句用陈述语序：疑问词 + 主语 + 谓语，不倒装，也不加 do / does / did。一般疑问句（是不是）用 whether 或 if 引出。",
+  ex:[["Do you know where is the library?","Do you know where the library is?"],
+      ["I'm not sure what time does the class start.","I'm not sure what time the class starts."],
+      ["Can you tell me is it free?","Can you tell me whether it is free?"]],
+  tip:"排词成句最常考这一点。看到 Do you know / tell me，后面先放主语。"},
+ g5:{name:"定语从句 who / that / where", intro:"2026-11-16",
+  rule:"用从句修饰名词：人用 who，物用 that（或 which），地点后面接完整句子用 where。从句紧跟在名词后面，从句里不要再重复主语。",
+  ex:[["The woman is talking to Jim is the manager.","The woman who is talking to Jim is the manager."],
+      ["I need a place which I can study.","I need a place where I can study."],
+      ["People who they live nearby use the park.","People who live nearby use the park."]],
+  tip:"自查：一个句子里出现两个谓语动词，是不是漏了 who / that？"},
+ g6:{name:"时态：最常用的四条", intro:"2026-11-18",
+  rule:"① 讲过去的事用过去时，整句保持一致；② since / for + 一段时间，用现在完成时；③ 有具体的过去时间（yesterday、last week、ago），不用现在完成时；④ 解释自己刚说过的话用 I meant / I didn't mean，“明白了”说 Got it。",
+  ex:[["When it arrived, the base is cracked.","When it arrived, the base was cracked."],
+      ["I live in Texas since 2023.","I have lived in Texas since 2023."],
+      ["I have finished it yesterday.","I finished it yesterday."]],
+  tip:"自查：每个动词旁边，有没有一个时间词在“管”它？"}
+};
+// 日期 -> 当天内容（w 第几周；x 当天要写的题）
+const PLAN = {
+ "2026-11-02":{w:1,x:[{type:"email",id:"e2"}]},
+ "2026-11-03":{w:1,x:[{type:"disc",id:"d1"}]},
+ "2026-11-04":{w:1,x:[{type:"email",id:"e3"}]},
+ "2026-11-05":{w:1,x:[{type:"disc",id:"d2"}]},
+ "2026-11-06":{w:1,x:[{type:"email",id:"e5"}]},
+ "2026-11-07":{w:1,x:[{type:"note",text:"今天做诊断测试（含写作），按考试计时完成。写完把写作部分发给我批改。"}]},
+ "2026-11-09":{w:2,x:[{type:"email",id:"e4"}]},
+ "2026-11-10":{w:2,x:[{type:"disc",id:"d3"}]},
+ "2026-11-11":{w:2,x:[{type:"email",id:"e6"}]},
+ "2026-11-12":{w:2,x:[{type:"disc",id:"d4"}]},
+ "2026-11-13":{w:2,x:[{type:"email",id:"e7"}]},
+ "2026-11-14":{w:2,x:[{type:"disc",id:"d5"}]},
+ "2026-11-16":{w:3,x:[{type:"email",id:"e8"}]},
+ "2026-11-17":{w:3,x:[{type:"disc",id:"d6"}]},
+ "2026-11-18":{w:3,x:[{type:"email",id:"e9"}]},
+ "2026-11-19":{w:3,x:[{type:"disc",id:"d7"}]},
+ "2026-11-20":{w:3,x:[{type:"email",id:"e10"}]},
+ "2026-11-21":{w:3,x:[{type:"set",date:"2026-11-21"}]},
+ "2026-11-23":{w:4,x:[{type:"email",id:"e12"}]},
+ "2026-11-24":{w:4,x:[{type:"disc",id:"d9"}]},
+ "2026-11-25":{w:4,x:[{type:"email",id:"e13"}]},
+ "2026-11-27":{w:4,x:[{type:"disc",id:"d10"}]},
+ "2026-11-28":{w:4,x:[{type:"set",date:"2026-11-28"}]}
+};
+// 已批改的作文（每次批改后由 Claude 追加）
+const PIECES = [
+ {id:"email1", date:"2026-10-31", title:"邮件 #1 · 园艺俱乐部", kind:"email",
+  prompt:"You recently joined a community gardening club in your neighborhood. At the last meeting, the club organizer, Ms. Rivera, asked members for ideas about how to attract more young families to the club. Write an email to Ms. Rivera: thank her for organizing the last meeting; suggest one activity that would appeal to young families, and explain why; offer to help with the activity in a specific way.",
+  final:"Hi Ms. Rivera,\n\nThank you so much for organizing our last club meeting and raising such an important question. I completely agree that we should bring more young families to our club.\n\nOne idea is to host a family movie night once a month. Most parents in young families work full-time, so they look for relaxing activities they can enjoy with their kids. We could watch short, kid-friendly films about gardening and then have a casual discussion afterward. It would be fun for both parents and children, and everyone could develop an interest in gardening along the way.\n\nIf you like this idea, I'd be happy to make the schedule, research suitable films, and plan a discussion topic for each session.\n\nI'm looking forward to seeing our club grow!\n\nBest,\nYolanda",
+  errors:[
+   ["bringing this great idea","raising such an important question","“提出问题”用 raise"],
+   ["we can bring a “movie” night","host a movie night","举办活动用 host / hold"],
+   ["Most young families are working people, they need…","Most parents in young families work full-time, so they…","两个完整句子不能只用逗号连；most 放名词前"],
+   ["Movie night should be perfect fit.","A movie night would be a perfect fit.","别漏冠词 a；建议用 would"],
+   ["a small and casual discussion after that","a short, casual discussion afterward","讨论的“短”用 short"],
+   ["build an interest of gardening","develop an interest in gardening","interest 后接 in"],
+   ["do a research for the video selection","research suitable films","research 不可数"],
+   ["I'm happy to","I'd be happy to","主动帮忙的礼貌说法"],
+   ["Let's make our club better and better.","I'm looking forward to seeing our club grow!","better and better 是直译"],
+   ["looking forward to see","looking forward to seeing","look forward to + doing"]],
+  patterns:["look forward to + doing（to 是介词）","an interest in something","research 不可数：do research / research something"]}
+];
+// 常见问题（按出现次数排序；每次批改后由 Claude 更新）
+const ISSUES = [
+ {name:"泛指一类人或事物时多加了 the", count:5, rule:"泛指一类人或事物（上班的家长、学生、线下课）时，用复数，不加 the。只有双方都知道具体是哪些的时候才加 the。", examples:[
+  ["so the working parents can bring their kids","so working parents can bring their kids"],
+  ["the kids who don't have a computer","students who don't have computers"],
+  ["the face-to-face ones are more effective, since the students can…","face-to-face classes are more effective because students can…"],
+  ["The elders usually get up earlier than the young people","Older people usually get up earlier than young people"],
+  ["the kids should start to use computer","children should start using computers"]]},
+ {name:"句型陷阱：sb is easy to do、情态动词叠用", count:2, rule:"A is easy to learn 的主语是被学的东西；说“某人做某事更容易”，用 sb does sth more easily 或 It is easier for sb to do。could / can 和 be able to 不能叠在一起。", examples:[
+  ["Children are easier to learn a new language","Children learn new languages more easily"],
+  ["could not be able to attend","can't attend / aren't able to attend"]]},
+ {name:"suggest 的用法", count:2, rule:"suggest 不接“某人 + to do”。可以接 that 从句（从句里的动词用原形），也可以接 -ing。", examples:[
+  ["I suggest the library to extend a couple hours","I suggest that the library stay open a few hours longer"],
+  ["I suggest that the school keeps…","I suggest that the school keep…"]]},
+ {name:"逗号连接两个完整句子", count:4, rule:"两个完整的句子（各有主语和谓语）之间，不能只用逗号。要么用句号分开，要么用 and / but / so / because 连接。", examples:[
+  ["Most young families are working people, they need some relaxation.","Most young parents work full-time, so they need some relaxation."],
+  ["Let's start from tomorrow, it's almost bedtime now.","Let's start tomorrow. It's almost bedtime."],
+  ["No, I don't mean the whole schedule, I mean…","No, I didn't mean the whole schedule. I meant…"]]},
+ {name:"漏掉冠词 a / the", count:3, rule:"单数可数名词前面一定要有 a / an / the / my 这类限定词。写完检查每个单数名词。", examples:[
+  ["Movie night should be perfect fit.","A movie night would be a perfect fit."],
+  ["do group discussion after that","have a group discussion afterward"]]},
+ {name:"介词和固定搭配", count:7, rule:"这类没有规律，只能一个个记。最常错的几组：interest in、on a website、start tomorrow（不加 from）、a schedule for、somewhere I can（不用 which）。", examples:[
+  ["build an interest of gardening","develop an interest in gardening"],
+  ["in my words study website","on my vocabulary website"],
+  ["Let's start from tomorrow","Let's start tomorrow"],
+  ["a place which I can go over it","somewhere I can review"],
+  ["I can't take the class today.","I can't come to class today."]]},
+ {name:"to 后面接 -ing 的固定搭配", count:1, rule:"look forward to、be used to、when it comes to 里的 to 是介词，后面接动词 -ing。", examples:[
+  ["I'm looking forward to see our club grow.","I'm looking forward to seeing our club grow."]]},
+ {name:"语气和情态动词前后不一致", count:4, rule:"提建议、请求、主动帮忙时用 would / could，语气更礼貌。前面用了 would，后面要配 could。", examples:[
+  ["It would be better if you can make me a schedule.","It would be great if you could make me a schedule."],
+  ["It will be fun for both adults and kids.","It would be fun for both parents and kids."],
+  ["I'm happy to make the schedule.","I'd be happy to make the schedule."]]},
+ {name:"时态", count:6, rule:"解释自己刚才说过的话，用过去时（I meant / I didn't mean）；“明白了”用 got it。", examples:[
+  ["I don't mean the whole schedule","I didn't mean the whole schedule"],
+  ["OK, get it.","OK, got it."],
+  ["Since I started running, I got better sleep","Since I started running, my sleep has improved"],
+  ["Since the city built a bike lane, I did not have to drive","Since the city built a bike lane, I have stopped driving"],
+  ["those who had registered（讲现在）","people who have registered"],
+  ["the book which is recommended to me last week","the book that was recommended to me last week"]]},
+ {name:"疑问句语序和主谓一致", count:1, rule:"直接疑问句要倒装：Why are there…?；there is / there are 跟后面的名词单复数一致。", examples:[
+  ["why there's no new words","Why are there no new words?"]]},
+ {name:"不可数名词", count:1, rule:"research、advice、information、homework、feedback 都不可数，不能加 a，也不能加 s。", examples:[
+  ["do a research for the video selection","do some research / research suitable videos"]]},
+ {name:"中文直译的表达", count:5, rule:"写完读一遍，看哪句是从中文直接翻过来的，换成英文的习惯说法。", examples:[
+  ["Let's make our club better and better.","I'm looking forward to seeing our club grow."],
+  ["we can bring a movie night","we could host a movie night"],
+  ["bringing this great idea","raising such an important question"],
+  ["a small and casual discussion","a short, casual discussion"],
+  ["Modify the whole thing","Revise the whole thing"]]},
+ {name:"词序和连字符", count:2, rule:"most 放在名词前（Most parents…）；两个词合成一个形容词放在名词前时加连字符：full-time、garden-related、kid-friendly。", examples:[
+  ["The adults in young families are most full time workers.","Most parents in young families work full-time."],
+  ["garden related video","garden-related videos"]]}
+];
+const CHECKLIST = [
+ "每个逗号后面，是不是又开始了一个完整的句子？是的话，改成句号或加 and / so / because。",
+ "每个单数名词前面，有没有 a / the / my？",
+ "提建议、主动帮忙，有没有用 would / could？",
+ "look forward to 后面，是不是 -ing？",
+ "有没有哪句话是从中文直接翻过来的？",
+ "Do you know / Could you tell me 后面，是不是陈述语序（不倒装）？",
+ "邮件三个要点是不是都写到了？字数在 80–120 之间吗？"
+];
+const ISSUES_UPDATED = "2026-11-02";
+
+
+/* ---------- 日期 ---------- */
+function dayNum(d){ return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5); }
+function isoToNum(s){ const [y,m,d]=s.split("-").map(Number); return Math.floor(Date.UTC(y,m-1,d)/864e5); }
+function numToIso(n){ return new Date(n*864e5).toISOString().slice(0,10); }
+function label(n){ const d=new Date(n*864e5); return `${d.getUTCMonth()+1}/${d.getUTCDate()} 周${"日一二三四五六"[d.getUTCDay()]}`; }
+const TODAY = dayNum(new Date());
+const HOLI = new Set(["2026-11-26","2026-12-24","2026-12-25","2027-01-01"].map(isoToNum));
+const isRest = n => new Date(n*864e5).getUTCDay()===0 || HOLI.has(n);
+function shift(n){ while(isRest(n)) n++; return n; }
+const STAGES = [[1,"读错误表"],[3,"遮住修改版重写"],[10,"最后重写一次"]];
+
+/* ---------- 状态 ---------- */
+const KEY="toefl-writing-v1";
+let S={done:{},drafts:{},bas:{},drill:{},t:0};
+const nMarks = d => Object.keys((d&&d.mark)||{}).length;
+function merge(a,b){
+  const o={done:{},drafts:{},bas:{},drill:{},t:Math.max(a.t||0,b.t||0)};
+  for(const s of [a,b]){
+    Object.assign(o.done, JSON.parse(JSON.stringify(s.done||{})));
+    for(const k in (s.drafts||{})) if(!o.drafts[k] || (s.drafts[k]||"").length > o.drafts[k].length) o.drafts[k]=s.drafts[k];
+    for(const k in (s.bas||{})) if(!o.bas[k] || (s.bas[k].score||0) >= (o.bas[k].score||0)) o.bas[k]=JSON.parse(JSON.stringify(s.bas[k]));
+    for(const k in (s.drill||{})){
+      const x=JSON.parse(JSON.stringify(s.drill[k]));
+      if(!o.drill[k]) o.drill[k]=x;
+      else{ const y=o.drill[k];
+        o.drill[k] = nMarks(x)>=nMarks(y) ? {ans:Object.assign({},y.ans,x.ans),mark:x.mark} : {ans:Object.assign({},x.ans,y.ans),mark:y.mark}; }
+    }
+  }
+  return o;
+}
+try{ const x=JSON.parse(localStorage.getItem(KEY)||"null"); if(x) S=merge(S,x); }catch(e){}
+let ref=null, saving=false, again=false, tmr=null;
+function setSync(t){ document.getElementById("sync").textContent=t; }
+async function push(){ if(!ref) return; if(saving){again=true;return;} saving=true;
+  try{ await ref.set(JSON.parse(JSON.stringify(S))); setSync("进度已同步，手机和电脑通用"); }catch(e){ setSync("同步失败，进度先存在本设备"); }
+  saving=false; if(again){again=false;push();} }
+function save(){ S.t=Date.now(); try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} clearTimeout(tmr); tmr=setTimeout(push,800); }
+(async()=>{ try{
+  if(!window.claude||!claude.use) return;
+  const go=(async()=>{ const db=await claude.use("db"), user=await claude.use("user"); if(!db||!user) return "none";
+    const id=await user.id(); if(!id) return "none";
+    ref=db.collection("data/users/"+id).doc("toefl-writing");
+    const snap=await ref.get(); const d=snap&&snap.exists&&typeof snap.data==="function"?snap.data():null;
+    if(d){ S=merge(S, JSON.parse(JSON.stringify(d))); try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){} renderAll(); }
+    push(); return "ok"; })();
+  const r=await Promise.race([go,new Promise(x=>setTimeout(()=>x("timeout"),10000))]);
+  if(r==="timeout") setSync("暂时连不上同步，进度先存在本设备");
+}catch(e){} })();
+
+/* ---------- 工具 ---------- */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const wc=s=>(s.trim().match(/[A-Za-z0-9'’-]+/g)||[]).length;
+const HR=`<hr style="border:0;border-top:1px solid var(--line);width:100%;margin:4px 0">`;
+let VIEW = TODAY;
+let UID=0; const uid=()=>"u"+(UID++);
+
+function emailHtml(e){ return `<div class="prompt en">${esc(e.situation)}<div style="margin-top:8px">Write an email to <b>${esc(e.to)}</b>. In your email:</div><ul>${e.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul></div>`; }
+function discHtml(d){ return `<div class="prompt en"><div class="small" style="font-family:var(--font-body)">课程：${esc(d.course)} · 教授的问题</div>${esc(d.prof)}</div>
+  <div class="post en"><b>${esc(d.s1[0])}</b><br>${esc(d.s1[1])}</div><div class="post en"><b>${esc(d.s2[0])}</b><br>${esc(d.s2[1])}</div>
+  <div class="small">要求：写 100 词以上，表明观点，给出理由和例子，并回应其中一位同学。</div>`; }
+
+function writer(key, title, promptText, minutes, minWords){
+  const draft=S.drafts[key]||"";
+  return `<div class="row"><span class="tag">${esc(title)}</span>${minutes?`<span class="actions"><span class="timer" id="t_${key}">${minutes}:00</span><button data-timer="${key}" data-min="${minutes}">开始计时</button></span>`:`<span class="small">用上面的总计时</span>`}</div>
+  <textarea id="ta_${key}" aria-label="在这里写" placeholder="Hi …">${esc(draft)}</textarea>
+  <div class="row"><span class="small" id="wc_${key}">${wc(draft)} 词 · 建议 ${minWords}</span>
+  <span class="actions"><button class="primary" data-copy="${key}" data-title="${esc(title)}" data-prompt="${esc(promptText)}" data-goal="${esc(minWords)}">复制给 Claude 批改</button></span></div>
+  <div class="small" id="cp_${key}"></div>`;
+}
+function plainEmail(e){ return `${e.situation} Write an email to ${e.to}. In your email: ${e.bullets.join("; ")}.`; }
+function plainDisc(d){ return `Professor: ${d.prof} ${d.s1[0]}: ${d.s1[1]} ${d.s2[0]}: ${d.s2[1]}`; }
+
+/* ---------- 排词成句 ---------- */
+function basHtml(setId, title){
+  const items=BAS[setId], res=S.bas[setId];
+  return `<div class="row"><span class="tag">${esc(title)}</span><span class="small">${res?`上次得分 ${res.score}/${items.length}`:`共 ${items.length} 题`}</span></div>
+  <div class="small">读上面的问句，把词块点成正确顺序的回答。点错了可以点“重来”。</div>
+  <div id="bas_${setId}"></div>`;
+}
+function startBas(setId){
+  const items=BAS[setId]; let k=0, score=0, wrong=[];
+  const box=$("bas_"+setId); if(!box) return;
+  const show=()=>{
+    if(k>=items.length){
+      S.bas[setId]={score, wrong, day:TODAY}; save();
+      box.innerHTML=`<div class="fb ${score===items.length?"good":"bad"}">得分 ${score}/${items.length}</div>
+        ${wrong.length?`<div class="small">错题（复制给我，我帮你讲语序规则）：</div><div class="en">${wrong.map(w=>esc(w)).join("<br>")}</div>
+        <div class="actions"><button class="primary" id="bcp">复制错题给 Claude</button><span class="small" id="bcpm"></span></div>`:""}
+        <div class="actions"><button id="bre">再做一遍</button></div>`;
+      if($("bcp")) $("bcp").onclick=()=>copy(`排词成句 ${setId} 错题：\n`+wrong.join("\n"), $("bcpm"));
+      $("bre").onclick=()=>startBas(setId); return;
+    }
+    const [q,a]=items[k]; const words=a.split(" "); const pool=words.map((w,i)=>({w,i})).sort(()=>Math.random()-0.5); const picked=[];
+    const draw=()=>{
+      box.innerHTML=`<div class="small">第 ${k+1} / ${items.length} 题</div><div class="en">“${esc(q)}”</div>
+      <div class="answer tiles" id="ans">${picked.map((p,j)=>`<span class="tile" data-back="${j}">${esc(p.w)}</span>`).join("")}</div>
+      <div class="tiles">${pool.filter(p=>!picked.includes(p)).map(p=>`<button class="tile" data-pick="${p.i}">${esc(p.w)}</button>`).join("")}</div>
+      <div class="actions"><button class="primary" id="bchk" ${picked.length<words.length?"disabled":""}>检查</button><button id="brs">重来</button></div><div id="bfb"></div>`;
+      box.querySelectorAll("[data-pick]").forEach(b=>b.onclick=()=>{ picked.push(pool.find(p=>p.i==b.dataset.pick)); draw(); });
+      box.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>{ picked.splice(+b.dataset.back,1); draw(); });
+      $("brs").onclick=()=>{ picked.length=0; draw(); };
+      $("bchk").onclick=()=>{
+        const mine=picked.map(p=>p.w).join(" "); const ok=mine===a;
+        if(ok) score++; else wrong.push(`${q} → 你的：${mine} ｜ 正确：${a}`);
+        $("bfb").innerHTML=`<div class="fb ${ok?"good":"bad"}">${ok?"正确":"正确顺序"}<div class="en">${esc(a)}</div></div><div class="actions" style="margin-top:8px"><button class="primary" id="bnx">下一题</button></div>`;
+        $("bchk").disabled=true; $("bnx").onclick=()=>{k++; show();}; $("bnx").focus();
+      };
+    };
+    draw();
+  };
+  show();
+}
+
+/* ---------- 语法卡片 ---------- */
+function cardHtml(gid, open){
+  const g=GRAMMAR[gid];
+  return `<div class="card"><details ${open?"open":""}><summary>写的时候留意 · ${esc(g.name)}</summary>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px"><div>${esc(g.rule)}</div>
+  <div class="tablewrap"><table><tr><th>错误写法</th><th>正确写法</th></tr>${g.ex.map(e=>`<tr><td class="en">${esc(e[0])}</td><td class="en">${esc(e[1])}</td></tr>`).join("")}</table></div>
+  <div class="small">${esc(g.tip)}</div></div></details></div>`;
+}
+function cardsFor(n){
+  const p=PLAN[numToIso(n)]; if(!p) return "";
+  const GW={g1:1,g2:1,g3:2,g4:2,g5:3,g6:3};
+  const ids=Object.keys(GRAMMAR).filter(g=> p.w===4 ? true : (GW[g]===p.w && isoToNum(GRAMMAR[g].intro)<=n));
+  // 第 4 周：六张卡片都收起，作为回顾
+  return ids.map(g=>cardHtml(g, numToIso(n)===GRAMMAR[g].intro)).join("");
+}
+
+/* ---------- 当天任务 ---------- */
+function taskHtml(x, iso, w){
+  if(x.type==="note") return `<p style="margin:0">${esc(x.text)}</p>`;
+  if(x.type==="email"){ const e=EMAILS[x.id]; return `<h3>${esc(e.title)}</h3>${emailHtml(e)}${writer(iso+":"+x.id,e.title,plainEmail(e),MINUTES[w].email,"80–120 词")}`; }
+  if(x.type==="disc"){ const d=DISCUSSIONS[x.id]; return `<h3>${esc(d.title)}</h3>${discHtml(d)}${writer(iso+":"+x.id,d.title,plainDisc(d),MINUTES[w].disc,"100 词以上")}`; }
+  if(x.type==="set"){ const st=SETS[x.date], e=EMAILS[st.email], d=DISCUSSIONS[st.disc];
+    return `<h3>${esc(st.title)} · 三部分连写</h3><div class="row"><span class="small">三部分一共限时 23 分钟，先点总计时再开始</span><span class="actions"><span class="timer" id="t_set">23:00</span><button data-timer="set" data-min="23">开始总计时</button></span></div>
+    ${basHtml(st.bas,"第 1 部分 · 排词成句")}${HR}
+    ${emailHtml(e)}${writer(iso+":"+st.email,"第 2 部分 · "+e.title,plainEmail(e),0,"80–120 词")}${HR}
+    ${discHtml(d)}${writer(iso+":"+st.disc,"第 3 部分 · "+d.title,plainDisc(d),0,"100 词以上")}`; }
+  return "";
+}
+
+/* ---------- 今天的练习 ---------- */
+function renderTask(){
+  UID=0;
+  const iso=numToIso(VIEW), p=PLAN[iso];
+  const stage = p ? `<div class="stage">${[1,2,3,4].map(w=>`<span class="${w===p.w?"on":""}">第 ${w} 周 · ${WEEKS[w]}</span>`).join("")}</div>` : "";
+  let h=`<div class="row"><h2>${VIEW===TODAY?"今天的练习":"预览："+label(VIEW)}</h2>${VIEW!==TODAY?`<button id="back">回到今天</button>`:""}</div>${stage}`;
+  if(!p){ h += isRest(VIEW) ? `<p style="margin:0">今天休息，不写新练习。</p>` : `<p style="margin:0">今天没有新练习，只做下面到期的复习。</p>`; }
+  else{
+    h += `<div class="goal"><b>本周重点：${esc(WEEKS[p.w])}</b><br>${esc(GOALS[p.w])}</div>`;
+    p.x.forEach(x=>{ h += HR + taskHtml(x, iso, p.w); });
+    const cards=cardsFor(VIEW); if(cards) h += HR + cards;
+  }
+  $("task").innerHTML=h;
+  if($("back")) $("back").onclick=()=>{ VIEW=TODAY; renderAll(); };
+  $("task").querySelectorAll("textarea[id^='ta_']").forEach(t=>{ const key=t.id.slice(3);
+    t.oninput=()=>{ const b=$("task").querySelector(`[data-copy="${key}"]`); S.drafts[key]=t.value; $("wc_"+key).textContent=wc(t.value)+" 词 · 建议 "+b.dataset.goal; save(); }; });
+  $("task").querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{
+    const key=b.dataset.copy, txt=$("ta_"+key).value.trim();
+    if(!txt){ $("cp_"+key).textContent="还没写内容，先写完再复制。"; return; }
+    copy(`【${b.dataset.title}】\n题目：${b.dataset.prompt}\n\n我写的（${wc(txt)} 词）：\n${txt}`, $("cp_"+key), $("ta_"+key)); });
+  $("task").querySelectorAll("[data-timer]").forEach(b=>b.onclick=()=>startTimer(b.dataset.timer, +b.dataset.min, b));
+  if(p) p.x.forEach(x=>{ if(x.type==="set") startBas(SETS[x.date].bas); });
+}
+const timers={};
+function startTimer(key, min, btn){
+  clearInterval(timers[key]); const end=Date.now()+min*60000; const el=$("t_"+key); btn.textContent="重新计时";
+  const tick=()=>{ const left=Math.round((end-Date.now())/1000); const a=Math.abs(left);
+    el.textContent=(left<0?"超时 ":"")+Math.floor(a/60)+":"+String(a%60).padStart(2,"0"); el.classList.toggle("over",left<0); };
+  tick(); timers[key]=setInterval(tick,1000);
+}
+function copy(text, msgEl, ta){
+  try{ navigator.clipboard.writeText(text).then(()=>{ msgEl.textContent="已复制，去对话里粘贴发给我。"; },()=>fallback()); }catch(e){ fallback(); }
+  function fallback(){ if(ta){ ta.focus(); ta.select(); } msgEl.textContent="这里不能自动复制，请长按全选文字，手动复制后发给我。"; }
+}
+
+/* ---------- 复习 ---------- */
+function dueReviews(){
+  const out=[];
+  for(const p of PIECES){ const d0=isoToNum(p.date);
+    STAGES.forEach(([off,name],s)=>{ const due=shift(d0+off), k=p.id+":"+s;
+      if(due<=TODAY && !S.done[k]) out.push({kind:"piece",p,s,name,due,k}); }); }
+  return out.sort((a,b)=>a.due-b.due);
+}
+function errorTable(p){ return `<div class="tablewrap"><table><tr><th>你写的</th><th>改为</th><th>要点</th></tr>${p.errors.map(r=>`<tr><td class="en">${esc(r[0])}</td><td class="en">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join("")}</table></div>`; }
+function renderReviews(){
+  const list=dueReviews();
+  let h=`<div class="row"><h2>今天要复习的</h2><span class="small">${list.length?list.length+" 项":""}</span></div>`;
+  if(!list.length) h+=`<p style="margin:0" class="small">没有到期的复习。</p>`;
+  list.forEach((r,i)=>{
+    const late=r.due<TODAY?`<span class="tag warn">已到期 ${TODAY-r.due} 天</span>`:"";
+    h+=`<details ${i===0?"open":""}><summary>${esc(r.p.title)} · 第 ${r.s+1} 次：${r.name} ${late}</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">`;
+    if(r.s===0){ h+=errorTable(r.p)+`<div><b>要记住的：</b>${r.p.patterns.map(esc).join("；")}</div>`; }
+    else{ h+=`<div class="prompt en">${esc(r.p.prompt)}</div><textarea id="rv_${i}" aria-label="凭记忆重写" placeholder="遮住修改版，凭记忆重写…" style="min-height:180px">${esc(S.drafts["rv:"+r.k]||"")}</textarea>
+      <div class="actions"><button id="rvs_${i}">写完了，对照修改版</button></div><div id="rvm_${i}"></div>`; }
+    h+=`<div class="actions"><button class="primary" id="rvd_${i}">完成这项复习</button></div></div></details>`;
+  });
+  $("reviews").innerHTML=h;
+  list.forEach((r,i)=>{
+    $("rvd_"+i).onclick=()=>{ S.done[r.k]=TODAY; save(); renderAll(); };
+    if(r.s>0){ $("rv_"+i).oninput=e=>{ S.drafts["rv:"+r.k]=e.target.value; save(); };
+      $("rvs_"+i).onclick=()=>{ $("rvm_"+i).innerHTML=`<div class="small">修改版：</div><div class="model en">${esc(r.p.final)}</div>${errorTable(r.p)}`; }; }
+  });
+}
+
+/* ---------- 作文库与日程 ---------- */
+function renderArchive(){
+  $("archive").innerHTML = PIECES.slice().reverse().map(p=>{
+    const st=STAGES.map((x,s)=>S.done[p.id+":"+s]?`<span class="tag good">复习 ${s+1} ✓</span>`:`<span class="tag">复习 ${s+1}：${label(shift(isoToNum(p.date)+x[0]))}</span>`).join(" ");
+    return `<details><summary>${esc(p.title)} · ${p.date.slice(5).replace("-","/")}</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
+      <div class="actions">${st}</div><div class="small">题目</div><div class="prompt en">${esc(p.prompt)}</div>
+      <div class="small">修改版</div><div class="model en">${esc(p.final)}</div>${errorTable(p)}
+      <div><b>要记住的：</b>${p.patterns.map(esc).join("；")}</div></div></details>`; }).join("") || `<p class="small">还没有批改过的作文。</p>`;
+}
+function xLabel(x, w){
+  if(x.type==="email") return EMAILS[x.id].title+`（${MINUTES[w].email} 分钟）`; if(x.type==="disc") return DISCUSSIONS[x.id].title+`（${MINUTES[w].disc} 分钟）`;
+  if(x.type==="note") return "诊断测试"; if(x.type==="set") return SETS[x.date].title+"（23 分钟）"; return ""; }
+function planLabel(iso){ const p=PLAN[iso]; if(!p) return "—"; return p.x.map(x=>xLabel(x,p.w)).filter(Boolean).join(" + "); }
+function renderSched(){
+  let h=`<tr><th>日期</th><th>周</th><th>内容</th><th></th></tr>`;
+  for(let n=isoToNum("2026-11-02"); n<=isoToNum("2026-11-28"); n++){
+    const iso=numToIso(n), rest=isRest(n), p=PLAN[iso];
+    h+=`<tr class="${n===TODAY?"today":""}"><td style="white-space:nowrap">${label(n)}</td><td style="white-space:nowrap">${p?WEEKS[p.w]:""}</td><td>${rest?"休息":esc(planLabel(iso))}</td><td>${p?`<button data-open="${n}">打开</button>`:""}</td></tr>`;
+  }
+  $("sched").innerHTML=h;
+  $("sched").querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>{ VIEW=+b.dataset.open; renderTask(); window.scrollTo({top:0,behavior:"smooth"}); });
+}
+function renderIssues(){
+  const list=ISSUES.slice().sort((a,b)=>b.count-a.count);
+  $("issues").innerHTML=`<div class="row"><h2>我的常见问题</h2><span class="small">更新于 ${ISSUES_UPDATED.slice(5).replace("-","/")} · 按出现次数排序</span></div>
+  <div class="prompt"><b>交稿前自查清单</b><ol style="margin:6px 0 0;padding-left:20px">${CHECKLIST.map(c=>`<li>${esc(c)}</li>`).join("")}</ol></div>
+  ${list.map((x,i)=>`<details ${i<2?"open":""}><summary>${esc(x.name)} <span class="tag ${x.count>=3?"warn":""}">${x.count} 次</span></summary>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px"><div>${esc(x.rule)}</div>
+    <div class="tablewrap"><table><tr><th>你写的</th><th>改为</th></tr>${x.examples.map(e=>`<tr><td class="en">${esc(e[0])}</td><td class="en">${esc(e[1])}</td></tr>`).join("")}</table></div></div></details>`).join("")}`;
+}
+function renderAll(){
+  const d=new Date(); $("today").textContent=`${d.getMonth()+1}月${d.getDate()}日 周${"日一二三四五六"[d.getDay()]}`;
+  renderTask(); renderReviews(); renderIssues(); renderArchive(); renderSched();
+}
+renderAll();
+</script>
+</body>
+</html>
+
+</body></html>
